@@ -33,7 +33,6 @@ function BinarySearch(arr, val){
     }
   }
 }
-
 // The array must be sorted first
 
 
