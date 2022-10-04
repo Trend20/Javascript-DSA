@@ -30,3 +30,28 @@ BUBBLE SORT
     }
     return arr;
   }
+
+
+
+  // BUBBLE-SORT LEETCODE SOLUTION 
+  /* 
+  You are given an array of strings names, and an array heights that consists of distinct positive integers. 
+  Both arrays are of length n.
+  For each index i, names[i] and heights[i] denote the name and height of the ith person.
+  Return names sorted in descending order by the people's heights.
+  // SOLUTION
+  */
+ function sortPeople(names, heights){
+  // declare an empty array for the results
+  let results = [];
+  // loop through the names array
+  for(let i = 0; i < names.length; i++){
+    // push the resulting object interms of key value pairs to the initialized result array
+    results.push({names: names[i], heights: heights[i]})
+  }
+  //  sort the heights array in a descending order
+  let sortedHeightArray = results.sort((a, b) => b.heights - a.heights);
+  // map the names using the sorted heights array
+  return sortedHeightArray.map(el => el.names);
+ }
+
