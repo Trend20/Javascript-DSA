@@ -5,7 +5,6 @@ The execution time of the function is directly proportional to the input size.
 the run time of the function grows as the input grows, and we mark it as O(n).
 
 // Example: Looping over an array to get each array element
-
  */
 
 function findArrayElements(arr){
