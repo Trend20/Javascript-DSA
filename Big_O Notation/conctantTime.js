@@ -12,3 +12,5 @@ function printTheLastElementOfArray(arr){
   return `The last element of the array is ${arr[4]}`;
 }
 printTheLastElementOfArray([2, 3, 5, 7, 9]);
+
+// O(1) => Time Complexity
