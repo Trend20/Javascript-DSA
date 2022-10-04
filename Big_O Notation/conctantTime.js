@@ -1,4 +1,5 @@
 /*
+Constant time algorithm
 
 An algorithm is said to run in constant time. 
 It means that as you increase the size of the input to the function. 
