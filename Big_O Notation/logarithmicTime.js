@@ -50,7 +50,6 @@ N/B: You must write an algorithm with O(log n) runtime complexity.
 */
 
 // solution
-
 function searchTarget(nums, target){
 
   // the array is already sorted
