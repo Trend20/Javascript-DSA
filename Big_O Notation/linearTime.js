@@ -9,14 +9,11 @@ the run time of the function grows as the input grows, and we mark it as O(n).
  */
 
 function findArrayElements(arr){
-
   for(let i = 0; i< arr.length; i++){
    console.log(`Element in an array is ${arr[i]}`)
   }
   return null;
 }
-
 const myArray = [45, 7, 89, 4,0];
 findArrayElements(myArray);
-
 // O(n) => Time Complexity
