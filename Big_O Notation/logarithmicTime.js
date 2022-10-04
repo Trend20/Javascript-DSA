@@ -32,8 +32,41 @@ function BinarySearch(arr, val){
       end = middle -1;
     }
   }
+
+  return -1;
 }
 // The array must be sorted first
 
 
 // O(log n) => Time Complexity
+
+// LEETCODE CHALLENGE
+/*
+Given an array of integers nums which is sorted in ascending order, 
+and an integer target, write a function to search target in nums. 
+If target exists, then return its index. Otherwise, return -1.
+
+N/B: You must write an algorithm with O(log n) runtime complexity.
+*/
+
+// solution
+
+function searchTarget(nums, target){
+
+  // the array is already sorted
+  let firstIndex = 0;
+  let lastIndex = nums.length - 1;
+
+  while(firstIndex <= lastIndex){
+    let middleIndex = Math.floor((firstIndex + lastIndex) / 2);
+
+    if(nums[middleIndex] === target){
+      return middleIndex;
+    }else if(nums[middleIndex] < target){
+      firstIndex = middleIndex + 1;
+    }else{
+      lastIndex = middleIndex -1;
+    }
+  }
+  return -1;
+}
