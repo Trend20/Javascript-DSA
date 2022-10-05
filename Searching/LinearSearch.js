@@ -10,7 +10,7 @@ to complete (1, 2, 3). The reason why this algorithm has a Big-O of O(n) is that
 the entire array needs to be iterated. For example, if the search term is 5, it takes five iterations (1, 2, 3, 4, 5). 
 If 6 is the search term, it goes through the entire array (1, 2, 3, 4, 5) and then returns false because it was not found.
 
-As noted previously, a linear search algorithm like this is great 
+A linear search algorithm like this is great 
 because it works whether or not the array is sorted. In a linear search algorithm, 
 every element of the array is checked. So, you should use a linear search when the array 
 is not sorted. If the array is sorted, you can do the search faster via a binary search.
@@ -28,3 +28,5 @@ function linearSearch(arr, target){
   }
   return false;
 }
+
+console.log(linearSearch([1, 3, 5, 7, 9], 6));
