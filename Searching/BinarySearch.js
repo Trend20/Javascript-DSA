@@ -16,7 +16,7 @@ function binarySearch(arr, target){
   let start = 0;
   let end = arr.length - 1;
 
-  for(let i = 0; i < arr.length; i++){
+  while(start < end){
     let middle = Math.floor((start + end) / 2);
 
     if(arr[middle] = target){
@@ -27,6 +27,8 @@ function binarySearch(arr, target){
       end = middle - 1;
     }
   }
+
+  return -1;
 }
 
 console.log(linearSearch([1, 3, 5, 7, 9], 6));
