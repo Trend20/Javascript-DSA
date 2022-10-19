@@ -19,7 +19,8 @@ function binarySearch(arr, target){
   while(start < end){
     let middle = Math.floor((start + end) / 2);
 
-    if(arr[middle] = target){
+    // ONLY COMPARE THE MIDDLE VALUE WITH THE TARGET
+    if(arr[middle] === target){
       return target;
     }else if(arr[middle] < target){
       start = middle + 1;
