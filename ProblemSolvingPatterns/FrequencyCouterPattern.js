@@ -28,5 +28,32 @@ function same(arr1, arr2){
 
 // OPTIMIZED SOLUTION: 0(n)
 function same(arr1, arr2){
-  
+  // first edge case to check if the arrays has the same number of items else return false to end the function
+  if(arr1.length !== arr2.length){
+    return false;
+  }
+
+  // declare the frequency counters for the two arrays
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+
+  // loop through the first array 
+  for(let item of arr1){
+    frequencyCounter1[item] = (frequencyCounter1[item] || 0) +1
+  }
+
+  // loop through the second array
+  for(let item of arr2){
+    frequencyCounter2[item] = (frequencyCounter2[item] || 0) + 1;
+  }
+
+  for(let key in frequencyCounter1){
+    if(!(key ** 2 in frequencyCounter2)){
+      return false;
+    }
+    if(frequencyCounter2[ key ** 2] !== frequencyCounter1[key]){
+      return false;
+    }
+  }
+  return true;
 }
