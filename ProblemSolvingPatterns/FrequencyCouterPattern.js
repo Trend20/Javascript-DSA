@@ -2,11 +2,11 @@
 /*
   Write a function called same which accepts two arrays and the function should return TRUE if every value in
   the array has its corresponding values squared in the second array else return FALSE. 
-  THE FREQUENCY OF VALUES MUST BE THE SAME
+  THE FREQUENCY OF VALUES MUST BE THE SAME.
 */
 // NAIVE SOLUTION: O(n^2)
 function same(arr1, arr2){
-  // check if the two arrays has got the same length 
+  // edge case check if the two arrays has got the same length 
   // if not return false to end the function
   if(arr1.length !== arr2.length){
     return false;
@@ -18,13 +18,16 @@ function same(arr1, arr2){
     // check if the declared correct index exist, and if not return false to end the function 
     if(correctIndex === -1){
       return false;
+    }else{
+      // remove the values of arr2 if they correspond to the values of arr1 squared 
+      arr2.splice(correctIndex, 1);
     }
-    // remove the values of arr2 if they correspond to the values of arr1 squared 
-    arr2.splice(correctIndex, 1);
   }
   return true;
 
 }
+arr1=[1, 2, 3, 4, 5 ];
+arr2=[1, 4, 9, 16, 25];
 
 // OPTIMIZED SOLUTION: 0(n)
 function same(arr1, arr2){
@@ -32,14 +35,13 @@ function same(arr1, arr2){
   if(arr1.length !== arr2.length){
     return false;
   }
-
   // declare the frequency counters for the two arrays
   let frequencyCounter1 = {};
   let frequencyCounter2 = {};
 
   // loop through the first array 
   for(let item of arr1){
-    frequencyCounter1[item] = (frequencyCounter1[item] || 0) +1
+    frequencyCounter1[item] = (frequencyCounter1[item] || 0) + 1;
   }
 
   // loop through the second array
