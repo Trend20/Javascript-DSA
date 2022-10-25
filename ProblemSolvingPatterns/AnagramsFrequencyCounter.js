@@ -5,8 +5,6 @@
  * formed by rearranging the letters of another, such as cinema formed from iceman.
  * ASSUME ALL THE INPUTS ARE SINGLE-WORDS WITH NO SPACES WHICH ARE LOWERCASE 
  */
-
-
 function validAnagram(str1, str2){
 
   // convert the strings to arrays
