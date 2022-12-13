@@ -10,3 +10,5 @@ class SinglyLinkedListNode{
     return callback ? callback(this.value) : `${this.value}`;
   }
 }
+
+// Linked List operations
