@@ -1,4 +1,4 @@
-// declare class
+// declare node class
 
 class SinglyLinkedListNode{
   constructor(value, next=null){
@@ -11,4 +11,34 @@ class SinglyLinkedListNode{
   }
 }
 
+// define actual linked-list class
+class SingleLinkedList{
+  constructor(){
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+
 // Linked List operations
+
+// PUSH
+push(val){
+  // create new node
+  let newNode = new SinglyLinkedListNode(val)
+  if(!this.head){
+    this.head = newNode;
+    this.tail = this.head;
+  }else{
+    // assign new tail
+    this.tail.next = newNode
+    this.tail = newNode;
+  }
+  // increase the length
+  this.length++;
+  return this;
+}
+
+// POP
+
+} 
