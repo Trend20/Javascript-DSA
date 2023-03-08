@@ -1,7 +1,6 @@
 // declare node class
-
-class SinglyLinkedListNode{
-  constructor(value, next=null){
+export default class LinkedListNode {
+  constructor(value, next = null) {
     this.value = value;
     this.next = next | null;
   }
@@ -11,34 +10,36 @@ class SinglyLinkedListNode{
   }
 }
 
-// define actual linked-list class
-class SingleLinkedList{
-  constructor(){
+// define an empty linkedlist
+export class LinkedList {
+  constructor() {
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
 
+  // Linked List operations
+  // prepend
+  // append
+  // delete
+  // check if empty
 
-// Linked List operations
-
-// PUSH
-push(val){
-  // create new node
-  let newNode = new SinglyLinkedListNode(val)
-  if(!this.head){
-    this.head = newNode;
-    this.tail = this.head;
-  }else{
-    // assign new tail
-    this.tail.next = newNode
-    this.tail = newNode;
+  // PUSH
+  push(val) {
+    // create new node
+    let newNode = new LinkedListNode(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      // assign new tail
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    // increase the length
+    this.length++;
+    return this;
   }
-  // increase the length
-  this.length++;
-  return this;
+
+  // POP
 }
-
-// POP
-
-} 
