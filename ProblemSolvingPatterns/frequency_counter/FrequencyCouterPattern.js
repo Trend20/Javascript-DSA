@@ -5,55 +5,47 @@
   THE FREQUENCY OF VALUES MUST BE THE SAME.
 */
 // NAIVE SOLUTION: O(n^2)
-function same(arr1, arr2){
-  // edge case check if the two arrays has got the same length 
-  // if not return false to end the function
+const sameFrequency = (arr1, arr2) =>{
+//   check if the two arrays have got the same length
   if(arr1.length !== arr2.length){
     return false;
   }
-  // loop through the first array
+//   loop through the first array and compare value squared to the values of the second array
   for(let i = 0; i < arr1.length; i++){
-    let correctIndex = arr2.indexOf(arr1[i] ** 2);
-
-    // check if the declared correct index exist, and if not return false to end the function 
+    let correctIndex = arr2.indexOf(arr1[i] **2)
     if(correctIndex === -1){
       return false;
-    }else{
-      // remove the values of arr2 if they correspond to the values of arr1 squared 
-      arr2.splice(correctIndex, 1);
     }
+    arr2.splice(correctIndex, 1);
   }
   return true;
-
 }
 arr1=[1, 2, 3, 4, 5 ];
 arr2=[1, 4, 9, 16, 25];
+console.log(sameFrequency(arr1, arr2));
 
-// OPTIMIZED SOLUTION: 0(n)
-function same(arr1, arr2){
-  // first edge case to check if the arrays has the same number of items else return false to end the function
+// OPTIMIZED SOLUTION: 0(n) (FREQUENCY COUNTER)
+const same = (arr1, arr2) =>{
   if(arr1.length !== arr2.length){
     return false;
   }
-  // declare the frequency counters for the two arrays
+//   define frequencies
   let frequencyCounter1 = {};
   let frequencyCounter2 = {};
 
-  // loop through the first array 
-  for(let item of arr1){
-    frequencyCounter1[item] = (frequencyCounter1[item] || 0) + 1;
+//   loop to check frequencies
+  for(let val of arr1){
+    frequencyCounter1[val] = (frequencyCounter1[val] || 0) +1
   }
-
-  // loop through the second array
-  for(let item of arr2){
-    frequencyCounter2[item] = (frequencyCounter2[item] || 0) + 1;
+  for(let val of arr2){
+    frequencyCounter2[val] = (frequencyCounter2[val] || 0) +1
   }
-
+//   check if value exist
   for(let key in frequencyCounter1){
     if(!(key ** 2 in frequencyCounter2)){
       return false;
     }
-    if(frequencyCounter2[ key ** 2] !== frequencyCounter1[key]){
+    if(frequencyCounter2[key ** 2] !== frequencyCounter2[key]){
       return false;
     }
   }

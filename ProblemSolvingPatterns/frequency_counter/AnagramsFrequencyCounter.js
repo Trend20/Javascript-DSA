@@ -6,13 +6,8 @@
  * ASSUME ALL THE INPUTS ARE SINGLE-WORDS WITH NO SPACES WHICH ARE LOWERCASE 
  */
 function validAnagram(str1, str2){
-
-  // convert the strings to arrays
-  const arr1 = str1.split('');
-  const arr2 = str2.split('');
-
-  // edge case case to ensure both arrays has the same length
-  if(arr1.length !== arr2.length){
+  // edge cases to ensure both arrays has the same length
+  if(str1.length !== str2.length){
     return false;
   }
 
@@ -21,11 +16,11 @@ function validAnagram(str1, str2){
   let frequencyCounter2 = {};
 
   // loop through each arr and assign their frequency counters
-  for(let val of arr1){
+  for(let val of str1){
     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
   }
 
-  for(let val of arr2){
+  for(let val of str2){
     frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
   }
 
