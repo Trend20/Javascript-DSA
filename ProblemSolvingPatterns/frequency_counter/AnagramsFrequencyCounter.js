@@ -5,6 +5,8 @@
  * formed by rearranging the letters of another, such as cinema formed from iceman.
  * ASSUME ALL THE INPUTS ARE SINGLE-WORDS WITH NO SPACES WHICH ARE LOWERCASE 
  */
+
+// FIRST SOLUTION
 function validAnagram(str1, str2){
   // edge cases to ensure both arrays has the same length
   if(str1.length !== str2.length){
@@ -33,5 +35,27 @@ function validAnagram(str1, str2){
       return false;
     }
   }
+  return true;
+}
+
+//SECOND SOLUTION
+const ValidAnagram = (str1, str2) => {
+  if(str1.length !== str2.length){
+    return false;
+  }
+  let frequencyCounter = {};
+  for(let i = 0; i < str1.length; i++){
+    if(frequencyCounter[str1[i]]){
+      frequencyCounter[str1[i]] = (frequencyCounter[str1[i]] || 0) + 1;
+    }
+    frequencyCounter[str1[i]] = 1;
+  }
+  for(let j = 0; j < str2.length; i++){
+   if(!frequencyCounter[str2[j]]){
+     return false;
+   }
+   frequencyCounter[str2[j]] -= 1;
+  }
+
   return true;
 }
