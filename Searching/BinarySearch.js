@@ -10,7 +10,7 @@ this algorithm can search through the smaller parts, or it can search through th
 */
 // Time Complexity: O(log n)
 
-// EXAMPLE
+// EXAMPLE  1
 function binarySearch(arr, target){
   // iterate through all the array items
   let start = 0;
@@ -33,3 +33,51 @@ function binarySearch(arr, target){
 }
 
 console.log(binarySearch([1, 3, 5, 7, 9], 6));
+
+
+// EXAMPLE 2(WE USE DIVIDE AND CONQUER ALGORITHM PATTERN)
+
+// Write a function called binarySearch which accepts a sorted array
+// and a value and returns the index at which the value exists.Otherwise, return -1.
+// This algorithm should be more efficient than linearSearch - you can read how to
+// implement it here - https:
+//www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search and
+// here - https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/
+
+// Examples:
+//     binarySearch([1,2,3,4,5],2) // 1
+// binarySearch([1,2,3,4,5],3) // 2
+// binarySearch([1,2,3,4,5],5) // 4
+// binarySearch([1,2,3,4,5],6) // -1
+// binarySearch([
+//   5, 6, 10, 13, 14, 18, 30, 34, 35, 37,
+//   40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+// ], 10) // 2
+// binarySearch([
+//   5, 6, 10, 13, 14, 18, 30, 34, 35, 37,
+//   40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+// ], 95) // 16
+// binarySearch([
+//   5, 6, 10, 13, 14, 18, 30, 34, 35, 37,
+//   40, 44, 64, 79, 84, 86, 95, 96, 98, 99
+// ], 100) // -1
+
+function binarySearch2(arr, val){
+  let start = 0;
+  let end = arr.length -1;
+  let middle = Math.floor((start + end) / 2);
+  while(arr[middle] !== val && start <= end){
+    if(val < arr[middle]){
+      end = middle - 1;
+    }else{
+      start = middle + 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
+  if(arr[middle] === val){
+    return middle;
+  }
+  return -1;
+}
+
+console.log( binarySearch2([1,2,3,4,5],2));
