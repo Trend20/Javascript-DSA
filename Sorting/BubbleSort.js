@@ -20,7 +20,7 @@
 
   
   function bubbleSort(array) {
-    for (var i=0, arrayLength = array.length; i<arrayLength; i++) {
+    for (var i= 0; i < array.length; i++) {
     for (var j=0; j<=i; j++) {
       if (array[i] < array[j]) {
         swap(array, i, j);
