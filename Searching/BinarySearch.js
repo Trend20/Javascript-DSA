@@ -81,3 +81,28 @@ function binarySearch2(arr, val){
 }
 
 console.log( binarySearch2([1,2,3,4,5],2));
+
+// EXAMPLE 3
+// Given a sorted array of n integers and a target value, determine if the target exists in the array
+// in logarithmic time using the binary search algorithm. If target exists in the array, print the index of it.
+
+function binarySearch3(arr, target){
+//   define the low, mid and high
+  let low = 0;
+  let high = arr.length -1;
+  let mid = Math.floor((low + high) / 2);
+
+  while(arr[mid] !== target && low <= high){
+    if(target < arr[mid]){
+      high = mid -1;
+    }else{
+      low = mid + 1;
+    }
+  //   define the new mid
+    mid = Math.floor((low + high) / 2);
+  }
+  if(arr[mid] === target){
+    return mid;
+  }
+  return -1;
+}
