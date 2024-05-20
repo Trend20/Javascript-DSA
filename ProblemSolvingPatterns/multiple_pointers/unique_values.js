@@ -10,3 +10,21 @@ function countUniqueValues(arr){
     return i + 1;
 }
 countUniqueValues([1,2,2,5,7,7,99])
+
+
+// EXAMPLE 2
+// count unique pairs in an array
+
+const countUniquePairs = arr =>{
+    if(arr.length === 0) return 0;
+    let first = 0;
+
+//     loop through the array to get the other pointer
+    for(let last = i + 1; last < arr.length; last++){
+        if(arr[first] !== arr[last]){
+            first++;
+            arr[first] = arr[last];
+        }
+    }
+    return first + 1;
+}
